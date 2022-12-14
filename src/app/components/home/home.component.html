@@ -113,24 +113,14 @@
                         <button type="button" class="btn btn-danger ">Vote</button>
                     </div>
                 </div>
-                
-                
-
-
-
             </div>
-            
-
-
         </div>
     </div>
 </section>
 
 
 
-<!--==========================================
-=            All Category Section            =
-===========================================-->
+
 
 <section class=" section">
     <!-- Container Start -->
@@ -142,17 +132,15 @@
                     <h2>All Contest</h2>
                 </div>
                 <div class="row">
-                    <!-- Category list -->
-                    <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
+                    <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6" *ngFor="let t of showContest">
                         <div class="category-block">
                             <div class="header">
-                                <i class="fa fa-laptop icon-bg-1"></i>
-                                <h4>Electronics</h4>
+                                <i class="fa fa-gamepad icon-bg-3"></i>
+                                <a [routerLink]="['/contest-detail/', t.id]"><h4>{{t.name}}</h4></a>
                             </div>
                             <ul class="category-list">
-                                <li><a href="#">Status <span style="color: #fff; background-color: green">đang diễn ra</span></a></li>
-                                <li><a href="/candidate">Candidates <span>233</span></a></li>
-                                <li><a href="#">Voters <span>183</span></a></li>
+                                <li>Start Time <span>{{t.start_date.slice(0, -5)}}</span></li>
+                                <li>Last Time <span>{{t.last_date.slice(0, -5)}}</span></li>
                              
                             </ul>
                         </div>

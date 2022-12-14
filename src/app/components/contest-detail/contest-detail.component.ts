@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ApiService } from 'src/app/services/api.services';
 
 @Component({
   selector: 'app-contest-detail',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContestDetailComponent implements OnInit {
 
-  constructor() { }
+  id: any;
+  name_contest: any;
+  candidates: any = [];
+
+
+  constructor(private activedRouter: ActivatedRoute, private app:  ApiService) { }
 
   ngOnInit(): void {
+    this.activedRouter.paramMap.subscribe((query: any) => {
+      this.id = query.get('id');
+      this.app. getContestById(this.id).subscribe((res: any) => {
+
+        console.log(res.candidate_by_contest); 
+        this.name_contest = res.names;
+        this.candidates = res.candidate_by_contest;
+      })
+    });
+    
+
   }
 
 }
