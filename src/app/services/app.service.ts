@@ -6,6 +6,8 @@ const api = 'http://localhost:3000';
   providedIn: 'root',
 })
 export class AppService {
+  profile: any;
+
   constructor(private http: HttpClient) {}
   listContest() {
     return this.http.get(`${api}/contest/api/list`);
@@ -24,5 +26,10 @@ export class AppService {
 
   checkLogin(data:any){
     return this.http.post(`${api}/api/loginUser`,data)
+  }
+
+  getProfile(){
+    console.log(this.profile)
+    return this.profile
   }
 }

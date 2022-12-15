@@ -7,13 +7,13 @@ import { AppService } from 'src/app/services/app.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
   formLogin : FormGroup = new FormGroup({
     email : new FormControl('',[Validators.required,Validators.email]),
     password : new FormControl('',Validators.required),
   });
 
-  profile = []
   constructor(private app: AppService) { }
 
   get f(){
@@ -23,10 +23,14 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onLogin(){
+  onLogin(){    
     this.app.checkLogin(this.formLogin.value).subscribe((res:any)=>{
-      this.profile = res.account,
-      location.assign('/')
+      if(res.account){
+        sessionStorage.setItem('profile', JSON.stringify(res.account))
+        location.assign('/')
+      }else{
+        location.assign('/login')
+      }
     })
   }
 

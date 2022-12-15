@@ -11,18 +11,18 @@ export class ContestDetailComponent implements OnInit {
     
     // id: any = this.route.snapshot.paramMap.get('id')
     candidates_by_contest = new Array;
+    name_contest: any;
   constructor(private app: AppService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-   
+    this.getDefaitls()
   }
 
-  getHero(): void {
+  getDefaitls(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.app.getContestById(id).subscribe((res: any) =>{
-        console.log(res)
+        this.name_contest = res.names
         this.candidates_by_contest = res.candidate_by_contest;
-    })
+    });
   }
-
 }
