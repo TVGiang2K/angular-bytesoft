@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/services/api.services';
+import { AppService } from 'src/app/services/app.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   showContest: any = [];
   totalContest: any = '';
 
-  constructor(private app: ApiService) { }
+  constructor(private app: AppService) { }
 
   ngOnInit(): void {
     this.app.homeContest().subscribe(  (res: any) =>{

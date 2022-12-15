@@ -34,12 +34,12 @@
                 <div class="widget dashboard-container my-adslist">
                     <div class="row">
                         <div class="col-md-6">
-                            <h3 class="widget-header">{{name_contest.name}}</h3>
+                            <!-- <h3 class="widget-header">{{name_contest.name}}</h3> -->
                         </div>
                         <div class="col-md-6">
-                            Start time: {{name_contest.start_date.slice(0, -5)}};
+                            <!-- Start time: {{name_contest.start_date.slice(0, -5)}}; -->
                             <br>
-                            Last time: {{name_contest.last_date.slice(0, -5)}};
+                            <!-- Last time: {{name_contest.last_date.slice(0, -5)}}; -->
                         </div>
                     </div>
                     <table class="table table-responsive product-dashboard-table">
@@ -52,17 +52,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let t of candidates; index as i;">
+                            <tr *ngFor="let t of candidates_by_contest; index as i;">
                                 <td class="product-thumb">
                                     <img width="80px" height="auto" [src]="'http://localhost:3000/img/avatars/' +  t.avatar" alt=""
                                         alt="image description">
                                 </td>
                                 <td class="product-details">
-                                    <h3 class="title">{{t.name}}</h3>
-                                    <span class="add-id"><strong>Ad ID:</strong>{{t.id}}</span>
-                                    <span><strong>Address: </strong><time>{{t.address}}</time> </span>
-                                    <span class="status active"><strong>Total vote</strong>{{t.quantityVote}}</span>
-                                    <span class="location"><strong>Age:</strong>{{t.age}}</span>
+                                    <!-- <h3 class="title">{{t.name}}</h3> -->
+                                    <!-- <span class="add-id"><strong>Ad ID:</strong>{{t.id}}</span> -->
+                                    <!-- <span><strong>Address: </strong><time>{{t.address}}</time> </span> -->
+                                    <!-- <span class="status active"><strong>Total vote</strong>{{t.quantityVote}}</span> -->
+                                    <!-- <span class="location"><strong>Age:</strong>{{t.age}}</span> -->
                                 </td>
                                 <td class="product-category"><span class="categories">#{{i + 1}}</span></td>
                                 <td class="action" data-title="Action">
