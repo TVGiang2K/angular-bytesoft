@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ApiService } from 'src/app/services/api.services';
+import { AppService } from 'src/app/services/app.service';
 import Swal from 'sweetalert2';
 @Component({
   selector: 'app-register',
@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit {
     
   }
 
-  constructor(private app: ApiService,
+  constructor(private app: AppService,
       private http: HttpClient
     ) { }
 

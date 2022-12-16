@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ApiService } from 'src/app/services/api.services';
+import { AppService } from 'src/app/services/app.service';
 
 @Component({
   selector: 'app-contest-detail',
@@ -8,25 +8,24 @@ import { ApiService } from 'src/app/services/api.services';
   styleUrls: ['./contest-detail.component.css']
 })
 export class ContestDetailComponent implements OnInit {
-
-  id: any;
-  name_contest: any;
-  candidates: any = [];
-
-
-  constructor(private activedRouter: ActivatedRoute, private app:  ApiService) { }
+    
+    // id: any = this.route.snapshot.paramMap.get('id')
+    candidates_by_contest = new Array;
+    name_contest: any;
+  constructor(private app: AppService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
 
-    this.activedRouter.paramMap.subscribe((query: any) => {
-      this.id = query.get('id');
-      this.app. getContestById(this.id).subscribe((res: any) => {
-        this.name_contest = res.names;
-        this.candidates = res.candidates_by_contest;        
-      })
-    });
     
 
+    this.getDefaitls()
   }
 
+  getDefaitls(): void {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.app.getContestById(id).subscribe((res: any) =>{
+        this.name_contest = res.names
+        this.candidates_by_contest = res.candidates_by_contest;
+    });
+  }
 }
