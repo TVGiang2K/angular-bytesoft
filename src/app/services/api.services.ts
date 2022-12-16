@@ -7,7 +7,7 @@ const api: string = 'http://localhost:3000';
 export class ApiService {
     constructor(private http: HttpClient) {};
 
-    homeContest(){
+    homeContestList(){
         return this.http.get(`${api}/contest/api/list`);
     }
 
@@ -16,7 +16,18 @@ export class ApiService {
       return this.http.get<any>(`${api}/contest/api/${id}`);
     }
 
+    homeCandidateList(){
+      return this.http.get(`${api}/candidates/api/list`);
+    }
+
+    getCandidateById(id: number): any {
+      return this.http.get<any>(`${api}/candidates/api/${id}`);
+    }
+
   
+    get_register(data: any): any {      
+      return this.http.post<any>(`${api}/register`, data);
+    }
 
 
 }

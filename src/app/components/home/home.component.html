@@ -84,31 +84,27 @@
         </div>
         <div class="row">
             <!-- offer 01 -->
-            <div class="col-sm-12 col-lg-4">
+            <div class="col-sm-12 col-lg-4" *ngFor="let can of showCandidates">
                 <!-- product card -->
                 <div class="product-item bg-light">
                     <div class="card" >
                         <div class="thumb-content">
-                            <div class="name-th"><h3 style=" color: #fff">
-                                name contset
-                            </h3></div>
                             <a href="">
-                                <img class="card-img-top img-fluid mt-2" src="https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tos-alisg-avt-0068/be2f9f550108805cf58c4c7ffaf9522b.jpeg?x-expires=1670940000&x-signature=ZsYAd%2FNudlqehxF%2FyNwB8WrwCfQ%3D"
+                                <img class="card-img-top img-fluid mt-2" [src]="'http://localhost:3000/img/avatars/' +  can.avatar"
                                     alt="Card image cap">
                             </a>
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title"><a href="/candidate-detail">Nguyễ thúc thùy tiên</a></h4>
+                            <h4 class="card-title"><a  [routerLink]="['/candidate-detail/', can.id]" >{{can.name}}</a></h4>
                             <ul class="list-inline product-meta">
                                 <li class="list-inline-item">
-                                    <a href=""><i class="fa fa-folder-open-o"></i>contest 1</a>
+                                    <a href="">Contest: {{can.contest.name}}</a>
                                 </li>
                                 <li class="list-inline-item" style="font-size: 20px;">
-                                    <a href=""><i class="fa fa-map-marker" aria-hidden="true" ></i>tp Hồ Chí Minh</a>
+                                    <a href=""><i class="fa fa-map-marker" aria-hidden="true" ></i>{{can.address}}</a>
                                 </li>
                             </ul>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Explicabo, aliquam!</p>
+                            <p class="card-text">Total vote: {{can.quantityVote}}</p>
                         </div>
                         <button type="button" class="btn btn-danger ">Vote</button>
                     </div>
@@ -132,15 +128,15 @@
                     <h2>All Contest</h2>
                 </div>
                 <div class="row">
-                    <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6" *ngFor="let t of showContest">
+                    <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6" *ngFor="let c of showContest">
                         <div class="category-block">
                             <div class="header">
                                 <i class="fa fa-gamepad icon-bg-3"></i>
-                                <a [routerLink]="['/contest-detail/', t.id]"><h4>{{t.name}}</h4></a>
+                                <a [routerLink]="['/contest-detail/', c.id]"><h4>{{c.name}}</h4></a>
                             </div>
                             <ul class="category-list">
-                                <li>Start Time <span>{{t.start_date.slice(0, -5)}}</span></li>
-                                <li>Last Time <span>{{t.last_date.slice(0, -5)}}</span></li>
+                                <li>Start Time <span>{{c.start_date.slice(0, -5)}}</span></li>
+                                <li>Last Time <span>{{c.last_date.slice(0, -5)}}</span></li>
                              
                             </ul>
                         </div>

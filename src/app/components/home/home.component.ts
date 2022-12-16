@@ -10,13 +10,20 @@ export class HomeComponent implements OnInit {
 
   showContest: any = [];
   totalContest: any = '';
+  showCandidates: any = [];
 
   constructor(private app: ApiService) { }
 
   ngOnInit(): void {
-    this.app.homeContest().subscribe(  (res: any) =>{
+    this.app.homeContestList().subscribe(  (res: any) =>{      
         this.showContest = res.contests;
     })
+
+    this.app.homeCandidateList().subscribe(  (res: any) =>{
+      console.log(res.candidates);
+      
+      this.showCandidates = res.candidates;
+  })
   }
 
   open(){

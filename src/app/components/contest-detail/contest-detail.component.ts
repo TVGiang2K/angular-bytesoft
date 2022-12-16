@@ -17,13 +17,12 @@ export class ContestDetailComponent implements OnInit {
   constructor(private activedRouter: ActivatedRoute, private app:  ApiService) { }
 
   ngOnInit(): void {
+
     this.activedRouter.paramMap.subscribe((query: any) => {
       this.id = query.get('id');
       this.app. getContestById(this.id).subscribe((res: any) => {
-
-        console.log(res.candidate_by_contest); 
         this.name_contest = res.names;
-        this.candidates = res.candidate_by_contest;
+        this.candidates = res.candidates_by_contest;        
       })
     });
     

@@ -1,53 +1,72 @@
 
-
-
 <section class="user-profile section">
 	<div class="container">
-		<div class="row">
-            <div class="col-md-3 offset-md-1 col-lg-3 offset-lg-0"></div>
-			<div class="col-md-6 offset-md-1 col-lg-6 offset-lg-0">
-				<!-- Edit Personal Info -->
-				<div class="widget personal-info">
-					<h3 class="widget-header user">Register</h3>
-					<form action="#">
-						<!-- First Name -->
-						<div class="form-group">
-						    <label for="first-name">First Name</label>
-						    <input type="text" class="form-control" id="first-name">
-						</div>
-						<!-- Last Name -->
-						<div class="form-group">
-						    <label for="last-name">Email</label>
-						    <input type="text" class="form-control" id="last-name">
-						</div>
-						<!-- File chooser -->
-						<div class="form-group choose-file">
-						    <label for="last-name">Avatar</label>
-							<i class="fa fa-user text-center"></i>
-						    <input type="file" class="form-control-file d-inline" id="input-file">
-						 </div>
-						<!-- Zip Code -->
-						<div class="form-group">
-						    <label for="zip-code">Phone</label>
-						    <input type="text" class="form-control" id="zip-code">
-						</div>
-                        <!-- New Password -->
-						<div class="form-group">
-						    <label for="new-password">Password</label>
-						    <input type="password" class="form-control" id="new-password">
-						</div>
-						<!-- Confirm New Password -->
-						<div class="form-group">
-						    <label for="confirm-password">Enter the password</label>
-						    <input type="password" class="form-control" id="confirm-password">
-						</div>
-                        <button class="btn btn-transparent">register</button>
-					</form>
-				</div>
-				
-			</div>
-            <div class="col-md-3 offset-md-1 col-lg-3 offset-lg-0"></div>
-		</div>
+        <div class="row">
+                    <div class="col-md-3 offset-md-1 col-lg-3 offset-lg-0"></div>
+                    <div class="col-md-6 offset-md-1 col-lg-6 offset-lg-0">
+                        <!-- Edit Personal Info -->
+                        <div class="widget personal-info">
+                            <h3 class="widget-header user">Register</h3>
+                            <form method="post" [formGroup]="formRegister"  (submit)="on_register()" enctype="multipart/form-data">
+                                <!-- <div class="alert alert-warning alert-dismissible fade show" role="alert" *ngIf="checkErrors">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <strong>{{checkErrors}}</strong> 
+                                </div>
+                                
+                                <script>
+                                    $(".alert").alert();
+                                    </script> -->
+                                <!-- First Name -->
+                                <div class="form-group">
+                                    <label for="first-name">First Name</label>
+                                    <input type="text" class="form-control" formControlName="name" id="first-name" placeholder="Name">
+                                    <div *ngIf="fo['name'].touched && fo['name'].errors">
+                                        <small class="help-block" *ngIf="fo['name'].errors['required']">Name cannot be blank</small>
+                                        <small class="help-block" *ngIf="fo['name'].errors['minlength']">Name at least 3 characters</small>
+                                    </div>
+                                </div>
+                                <!-- Email -->
+                                <div class="form-group">
+                                    <label for="last-name">Email</label>
+                                    <input type="text" class="form-control" id="last-name" formControlName="email" placeholder="Email">
+                                    <div *ngIf="fo['email'].touched && fo['email'].errors">
+                                        <small class="help-block" *ngIf="fo['email'].errors['required']">Email cannot be blank</small>
+                                        <small class="help-block" *ngIf="fo['email'].errors['email']">Email incorrect Format </small>
+                                        <small class="help-block" *ngIf="fo['email'].errors['minlength']">Email at least 12 characters</small>
+                                    </div>
+                                </div>
+                                <!-- File chooser -->
+                                <div class="form-group choose-file">
+                                    <label for="last-name">Avatar</label>
+                                    <i class="fa fa-user text-center"></i>
+                                    <input type="file" class="form-control-file d-inline" (change)="getFile($event)"  formControlName="avatar" id="input-file">
+                                </div>
+                                <!-- Zip Code -->
+                                <div class="form-group">
+                                    <label for="zip-code">Phone</label>
+                                    <input type="text" class="form-control" id="zip-code" formControlName="phone" placeholder="Phone">
+                                    <div *ngIf="fo['phone'].touched && fo['phone'].errors">
+                                        <small class="help-block" *ngIf="fo['phone'].errors['required']">Phone cannot be blank</small>
+                                    </div>
+                                </div>
+                                <!-- New Password -->
+                                <div class="form-group">
+                                    <label for="new-password">Password</label>
+                                    <input type="password" class="form-control" id="new-password" formControlName="password" placeholder="Password">
+                                    <div *ngIf="fo['password'].touched && fo['password'].errors">
+                                        <small class="help-block" *ngIf="fo['password'].errors['required']">Password cannot be blank</small>
+                                        <small class="help-block" *ngIf="fo['password'].errors['pattern']">Password must be at least 4 characters, including lowercase letters, uppercase letters, numbers</small>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-transparent">register</button>
+                            </form>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-3 offset-md-1 col-lg-3 offset-lg-0"></div>
+                </div>
 	</div>
 </section>
 
