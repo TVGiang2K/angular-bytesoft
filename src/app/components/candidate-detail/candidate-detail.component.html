@@ -46,10 +46,15 @@
 					<h3>{{candidate.name}}</h3>
 					<ul class="list-inline">
 						<li class="list-inline-item"><b> Total vote: {{candidate.quantityVote}}</b></li>
-						<li class="list-inline-item"><a name="" id="" class="btn btn-primary" href="#" role="button">Vote</a></li>
 					</ul>
 					<img [src]="'http://localhost:3000/img/avatars/' +  candidate.avatar" alt="article-02">
-					
+					<form action="" method="get" (submit)="vote(candidate.id)">
+						<div class="form-group">
+						  <label for=""></label>
+						  <input type="number" class="form-control" name="" id="qttVote">
+						</div>
+						<button name="" id="" class="btn btn-danger"  role="button">Vote</button>
+					</form>
 						<ul class="list-inline">
 							<li class="list-inline-item"><h3> Age: {{candidate.age}}</h3></li>
 							<li class="list-inline-item"><h3> Address: {{candidate.address}}</h3></li>

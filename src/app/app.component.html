@@ -4,7 +4,7 @@
       <div class="col-md-12">
         <nav class="navbar navbar-expand-lg  navigation">
           <a class="navbar-brand" href="index.html">
-            <img src="assets/images/logo.png" alt="">
+            <img width="100px" src="https://bvote.vn/images/layout/logo.png" alt=""><b style="color: rgb(109, 179, 4);font-family: 'Dancing Script', sans-serif; font-size: 30px;">  Bkap</b>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -17,18 +17,22 @@
                 <a class="nav-link" routerLink="">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" routerLink="/user-profile">Profile</a>
+                <a class="nav-link" routerLink="user-profile">Profile</a>
               </li>
             </ul>
-            <ul class="navbar-nav ml-auto mt-10">
+            <ul class="navbar-nav ml-auto mt-10" *ngIf="!account">
               <li class="nav-item">
-                <a class="nav-link login-button" routerLink="/login">Login</a>
+                <a class="nav-link login-button" routerLink="login">Login</a>
               </li>
-              
-              <li>
-                <a href="">
-                  <img src="" alt="">
-                </a>
+            </ul>
+            <ul class="navbar-nav ml-auto mt-10" *ngIf="account">
+              <li class="nav-item">
+                <a class="nav-link login-button" routerLink="user-profile">{{account.name}}</a>
+              </li>
+              <li class="nav-item">
+                <form action="logout" method="get"  (submit)="onLogout()">
+                  <button class="nav-link login-button">Logout</button>
+                </form>
               </li>
             </ul>
           </div>

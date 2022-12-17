@@ -22,7 +22,13 @@ export class CandidateDetailComponent implements OnInit {
         this.candidate = res.candidate_by_id;
       })
     });
+  }
 
+  vote(idCandidate:number) {
+    let qttVote:any = document.getElementById('qttVote');
+    this.app.action_vote_candidate(idCandidate,qttVote.value).subscribe((res:any) => {
+     console.log(res);
+    })
   }
 
 }

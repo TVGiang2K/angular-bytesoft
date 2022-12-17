@@ -12,6 +12,8 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AboutComponent } from './components/about/about.component';
+import { ComponentsComponent } from './contest_details/components/components.component';
+import { ContestDetailsComponent } from './components/contest-details/contest-details.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { AboutComponent } from './components/about/about.component';
     RegisterComponent,
     LoginComponent,
     UserProfileComponent,
-    AboutComponent
+    AboutComponent,
+    ComponentsComponent,
+    ContestDetailsComponent
   ],
   imports: [
     BrowserModule,

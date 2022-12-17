@@ -3,153 +3,304 @@
 ================================-->
 
 <section class="hero-area bg-1 text-center overly">
-    <!-- Container Start -->
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <!-- Header Contetnt -->
-                <div class="content-block">
-                    <h1>Buy & Sell Near You </h1>
-                    <p>Join the millions who buy and sell from each other <br> everyday in local communities around
-                        the world</p>
-                    <div class="short-popular-category-list text-center">
-                        <h2>Popular Category</h2>
-                        <ul class="list-inline">
-                            <li class="list-inline-item">
-                                <a href=""><i class="fa fa-bed"></i> Hotel</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href=""><i class="fa fa-grav"></i> Fitness</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href=""><i class="fa fa-car"></i> Cars</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href=""><i class="fa fa-cutlery"></i> Restaurants</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href=""><i class="fa fa-coffee"></i> Cafe</a>
-                            </li>
-                        </ul>
-                    </div>
+  <!-- Container Start -->
 
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <!-- Header Contetnt -->
+        <div class="content-block banner-content"></div>
+        <!-- Advance Search -->
+        <div class="advance-search">
+          <form action="#">
+            <div class="row">
+              <!-- Store Search -->
+              <div class="col-lg-6 col-md-12">
+                <div class="block d-flex">
+                  <input
+                    type="text"
+                    class="form-control mb-2 mr-sm-2 mb-sm-0"
+                    id="search"
+                    placeholder="Search for store"
+                  />
                 </div>
-                <!-- Advance Search -->
-                <div class="advance-search">
-                    <form action="#">
-                        <div class="row">
-                            <!-- Store Search -->
-                            <div class="col-lg-6 col-md-12">
-                                <div class="block d-flex">
-                                    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="search"
-                                        placeholder="Search for store">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-12">
-                                <div class="block d-flex">
-                                    <!-- <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="search" placeholder="Search for store"> -->
-                                    <!-- Search Button -->
-                                    <button class="btn btn-main">SEARCH</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-
+              </div>
+              <div class="col-lg-6 col-md-12">
+                <div class="block d-flex">
+                  <!-- <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="search" placeholder="Search for store"> -->
+                  <!-- Search Button -->
+                  <button class="btn btn-main">SEARCH</button>
                 </div>
-
+              </div>
             </div>
+          </form>
         </div>
+      </div>
     </div>
-    <!-- Container End -->
+  </div>
+  <!-- Container End -->
 </section>
 
 <!--===================================
 =            Client Slider            =
 ====================================-->
 
-
 <!--===========================================
 =            Popular deals section            =
 ============================================-->
 
 <section class="popular-deals section bg-gray">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-title">
-                    <h2>Trending Candidates</h2>
-                    <p>Name contest</p>
-                </div>
+    
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-title">
+          <h2>Trending Candidates</h2>
+          <p>Name contest</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <!-- offer 01 -->
+      <div class="col-sm-12 col-lg-3" *ngFor="let can of showCandidates">
+        <!-- product card -->
+        <div class="product-item bg-light">
+          <div class="card">
+            <div class="thumb-content">
+              <a href="">
+                <img
+                  style="height: 300px"
+                  class="card-img-top img-fluid mt-2"
+                  [src]="'http://localhost:3000/img/avatars/' + can.avatar"
+                  alt="Card image cap"
+                />
+              </a>
             </div>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a [routerLink]="['/candidate-detail/', can.id]">{{
+                  can.name
+                }}</a>
+              </h4>
+              <ul class="list-inline product-meta">
+                <li class="list-inline-item">
+                  <a href="">Contest: {{ can.contest.name }}</a>
+                </li>
+                <li class="list-inline-item" style="font-size: 20px">
+                  <a href=""
+                    ><i class="fa fa-map-marker" aria-hidden="true"></i
+                    >{{ can.address }}</a
+                  >
+                </li>
+              </ul>
+              <p class="card-text">Total vote: {{ can.quantityVote }}</p>
+            </div>
+            <a [routerLink]="['/candidate-detail/', can.id]" class="btn btn-danger">Vote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <!-- Container Start -->
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <!-- Section title -->
+        <div class="section-title">
+          <h2>All Contest</h2>
         </div>
         <div class="row">
-            <!-- offer 01 -->
-            <div class="col-sm-12 col-lg-4" *ngFor="let can of showCandidates">
-                <!-- product card -->
-                <div class="product-item bg-light">
-                    <div class="card" >
-                        <div class="thumb-content">
-                            <a href="">
-                                <img class="card-img-top img-fluid mt-2" [src]="'http://localhost:3000/img/avatars/' +  can.avatar"
-                                    alt="Card image cap">
-                            </a>
+          <div
+            class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6"
+            *ngFor="let c of showContest"
+          >
+            <div class="category-block">
+              <div class="header">
+                <i class="fa fa-gamepad icon-bg-3"></i>
+                <a [routerLink]="['/contest_details/', c.id]"
+                  ><h4>{{ c.name }}</h4></a
+                >
+              </div>
+              <ul class="category-list">
+                <li>
+                  Start Time <span>{{ c.start_date.slice(0, -5) }}</span>
+                </li>
+                <li>
+                  Last Time <span>{{ c.last_date.slice(0, -5) }}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- /Category List -->
+        </div>
+      </div>
+    </div>
+    <div
+      class="section-branch aos-init aos-animate"
+      data-aos="fade-down"
+      data-aos-delay="0"
+    >
+      <div class="branch-content">
+        <div class="bs-container">
+          <div class="bs-row">
+            <div class="bs-col">
+              <div class="module module-branch">
+                <div
+                  class="module-header aos-init aos-animate"
+                  data-aos="fade-up"
+                >
+                  <span class="id">04</span>
+                  <h2 class="title"><span>Đối tác khách hàng</span></h2>
+                </div>
+                <div class="module-content active">
+                  <div class="branch-width">
+                    <div class="branch-slide text-center">
+                      <div class="item">
+                        <div class="branch-item">
+                          <a
+                            href="https://bvote.com.vn/index.html"
+                            class="link"
+                            target="__blank"
+                            ><img
+                              src="https://missgrandvietnam.bvote.vn/images/Logo-header.png"
+                              alt=""
+                          /></a>
                         </div>
-                        <div class="card-body">
-                            <h4 class="card-title"><a  [routerLink]="['/candidate-detail/', can.id]" >{{can.name}}</a></h4>
-                            <ul class="list-inline product-meta">
-                                <li class="list-inline-item">
-                                    <a href="">Contest: {{can.contest.name}}</a>
-                                </li>
-                                <li class="list-inline-item" style="font-size: 20px;">
-                                    <a href=""><i class="fa fa-map-marker" aria-hidden="true" ></i>{{can.address}}</a>
-                                </li>
-                            </ul>
-                            <p class="card-text">Total vote: {{can.quantityVote}}</p>
+                      </div>
+                      <div class="item">
+                        <div class="branch-item">
+                          <a
+                            href="https://bytesoft.vn/"
+                            class="link"
+                            target="__blank"
+                            ><img
+                              src="https://missgrandvietnam.bvote.vn/images/branch_item1.gif"
+                              alt=""
+                          /></a>
                         </div>
-                        <button type="button" class="btn btn-danger ">Vote</button>
+                      </div>
+                      <div class="item">
+                        <div class="branch-item">
+                          <a
+                            href="https://bytenext.io/"
+                            class="link"
+                            target="__blank"
+                            ><img
+                              src="https://missgrandvietnam.bvote.vn/images/bytenext_logo.png"
+                              alt=""
+                          /></a>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <div class="branch-item">
+                          <a
+                            href="https://bytenext.io/"
+                            class="link"
+                            target="__blank"
+                            ><img
+                              src="https://missgrandvietnam.bvote.vn/images/reavol-logo.png"
+                              alt=""
+                          /></a>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <div class="branch-item">
+                          <a
+                            href="https://bytenext.io/"
+                            class="link"
+                            target="__blank"
+                            ><img
+                              src="https://missgrandvietnam.bvote.vn/images/jobbooking-logo.png"
+                              alt=""
+                          /></a>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <div class="branch-item">
+                          <a
+                            href="https://bytenext.io/"
+                            class="link"
+                            target="__blank"
+                            ><img
+                              src="https://missgrandvietnam.bvote.vn/images/sailfish-logo.png"
+                              alt=""
+                          /></a>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <div class="branch-item">
+                          <a
+                            href="https://bytenext.io/"
+                            class="link"
+                            target="__blank"
+                            ><img
+                              src="https://missgrandvietnam.bvote.vn/images/c3group-logo.png"
+                              alt=""
+                          /></a>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <div class="branch-item">
+                          <a
+                            href="https://bytenext.io/"
+                            class="link"
+                            target="__blank"
+                            ><img
+                              src="https://missgrandvietnam.bvote.vn/images/behome-logo.png"
+                              alt=""
+                          /></a>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <div class="branch-item">
+                          <a
+                            href="https://avatarart.io/"
+                            class="link"
+                            target="__blank"
+                            ><img
+                              src="https://missgrandvietnam.bvote.vn/images/avatarart-logo.png"
+                              alt=""
+                          /></a>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <div class="branch-item">
+                          <a
+                            href="https://avatarart.io/"
+                            class="link"
+                            target="__blank"
+                            ><img
+                              src="https://missgrandvietnam.bvote.vn/images/langro-logo.png"
+                              alt=""
+                          /></a>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <div class="branch-item">
+                          <a
+                            href="https://avatarart.io/"
+                            class="link"
+                            target="__blank"
+                            ><img
+                              src="https://missgrandvietnam.bvote.vn/images/bytepay-logo.png"
+                              alt=""
+                          /></a>
+                        </div>
+                      </div>
                     </div>
+                  </div>
                 </div>
+                <span class="show__more">»</span>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+  <!-- Container End -->
 </section>
-
-
-
-
-
-<section class=" section">
-    <!-- Container Start -->
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <!-- Section title -->
-                <div class="section-title">
-                    <h2>All Contest</h2>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6" *ngFor="let c of showContest">
-                        <div class="category-block">
-                            <div class="header">
-                                <i class="fa fa-gamepad icon-bg-3"></i>
-                                <a [routerLink]="['/contest-detail/', c.id]"><h4>{{c.name}}</h4></a>
-                            </div>
-                            <ul class="category-list">
-                                <li>Start Time <span>{{c.start_date.slice(0, -5)}}</span></li>
-                                <li>Last Time <span>{{c.last_date.slice(0, -5)}}</span></li>
-                             
-                            </ul>
-                        </div>
-                    </div> <!-- /Category List -->
-                   
-
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Container End -->
-</section>
-
-
-

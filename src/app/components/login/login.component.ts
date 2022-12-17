@@ -26,12 +26,13 @@ export class LoginComponent implements OnInit {
   onLogin(){    
     this.app.checkLogin(this.formLogin.value).subscribe((res:any)=>{
       if(res.account){
-        sessionStorage.setItem('profile', JSON.stringify(res.account))
+        console.log(res);
+        localStorage.setItem('profile', JSON.stringify(res.account))
         location.assign('/')
       }else{
         location.assign('/login')
       }
-    })
+    });
   }
 
 }

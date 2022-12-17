@@ -5,3 +5,44 @@
     text-align: center;
     margin: bottom 15px;
 }
+
+@media only screen and (min-width: 1200px){
+    .lg-25-15 {
+      padding-left: 15px;
+      padding-right: 15px;
+      width: 25%;
+  }
+  }
+  .aos-init .item {
+    max-width: 260px;
+    margin: 0 auto 30px;
+    -webkit-box-shadow: 0 0 26px rgb(0 0 0 / 5%);
+    box-shadow: 0 0 26px rgb(0 0 0 / 5%);
+    position: relative;
+    text-align: center;
+  }
+  
+  .aos-init .item .item-content {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* border-radius: 8px; */
+    position: relative;
+  }
+  
+  .aos-init .item .item-content .content {
+    /* overflow: hidden; */
+    border-radius: 8px;
+  }
+
+  .module-content .item .text {
+    background: white;
+    padding: 20px 16px 17px 16px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    text-align: left;
+}
+
+
+
+

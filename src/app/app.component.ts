@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LoginComponent } from './components/login/login.component';
 import { AppService } from './services/app.service';
 
@@ -7,10 +7,34 @@ import { AppService } from './services/app.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent extends LoginComponent{
-  data: any = 10;
+/* The class AppComponent implements the OnInit interface */
+export class AppComponent implements OnInit{
+  constructor(private app: AppService){}
 
-  getdata(): void {
-    console.log(this.data);
+  account:any;
+
+  ngOnInit(): void {
+    this.getdata()
+  }
+
+  getdata() {
+    this.app.getProfile().subscribe((res:any)=>{
+      console.log('dasdas');
+      this.account = res.user
+    })
+  }
+
+  onLogout(){
+    this.app.logout().subscribe((res:any)=>{
+      
+    })
+    location.assign('/')
+   
+  }
+
+  profile(){
+    this.app.getProfile().subscribe((res:any)=>{
+      this.account = res.user
+    })
   }
 }

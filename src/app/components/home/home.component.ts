@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
   showContest: any = [];
   totalContest: any = '';
   showCandidates: any = [];
+  account: any = [];
 
   constructor(private app: AppService, ) { }
 
@@ -21,10 +22,12 @@ export class HomeComponent implements OnInit {
 
     this.app.homeCandidateList().subscribe(  (res: any) =>{      
       this.showCandidates = res.candidates;
-  })
+    })
+
+    this.app.getProfile().subscribe((res:any)=>{
+      this.account = res.user
+    })
   }
 
-  open(){
-    
-  }
+  
 }

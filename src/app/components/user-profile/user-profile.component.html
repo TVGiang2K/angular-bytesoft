@@ -1,79 +1,137 @@
 <section class="user-profile section">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-10 offset-md-1 col-lg-4 offset-lg-0">
-				<div class="sidebar">
-					<!-- User Widget -->
-					<div class="widget user-dashboard-profile">
-						<!-- User Image -->
-						<div class="profile-thumb">
-							<img src="images/user/user-thumb.jpg" alt="" class="rounded-circle">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1 col-lg-4 offset-lg-0">
+        <div class="sidebar">
+          <!-- User Widget -->
+          <div class="widget user-dashboard-profile">
+            <!-- User Image -->
+            <div class="profile-thumb">
+              <img
+                [src]="'http://localhost:3000/img/avatars/' + info.avatar"
+                alt=""
+                class="rounded-circle"
+              />
+            </div>
+            <!-- User Name -->
+            <h5 class="text-center">{{ info.name }}</h5>
+            <p>Joined {{ date }}</p>
+          </div>
+          <!-- Dashboard Links -->
+          <div class="widget user-dashboard-menu">
+            <ul>
+              <li>
+                <a href="dashboard-my-ads.html"
+                  ><i class="fa fa-user"></i> My Ads</a
+                >
+              </li>
+              <li>
+                <a href="dashboard-favourite-ads.html"
+                  ><i class="fa fa-bookmark-o"></i> Favourite Ads
+                  <span>5</span></a
+                >
+              </li>
+              <li>
+                <a href="dashboard-archived-ads.html"
+                  ><i class="fa fa-file-archive-o"></i>Archeved Ads
+                  <span>12</span></a
+                >
+              </li>
+              <li>
+                <a href="dashboard-pending-ads.html"
+                  ><i class="fa fa-bolt"></i> Pending Approval<span>23</span></a
+                >
+              </li>
+              <li>
+                <a href="delete-account.html"
+                  ><i class="fa fa-power-off"></i>Rechager</a
+                >
+              </li>
+              <li>
+                <a href="logout.html"><i class="fa fa-cog"></i> Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
+        <!-- Edit Personal Info -->
+        <div class="sidebar">
+          <div class="widget price text-center">
+            <h4>Account balance</h4>
+            <p>{{ info.money | currency : "VND" }}</p>
+          </div>
+          <!-- User Profile widget -->
+          <div class="module-header aos-init aos-animate" style="margin-top:150px" data-aos="fade-up">
+            <span class="id">02</span>
+            <h2 class="title"><span>Your recent activity</span></h2>
+          </div>
+          <div class="module-content aos-init" data-aos="fade-up">
+            <div class="table-content">
+              <div class="table-head">
+                <table class="table">
+                  <thead class="thead">
+                    <tr>
+                      <th>Thí sinh được bình chọn</th>
+                      <th>Mã bình chọn</th>
+                      <th>Người bình chọn</th>
+                      <th>Thời gian</th>
+                    </tr>
+                    <tr *ngFor="let item of history_Vote">
+                      <td style="display: flex; align-items: center">
+                        <div >
+							<img class="avatar" [src]="'http://localhost:3000/img/avatars/' + item.candidate.avatar" alt="">
 						</div>
-						<!-- User Name -->
-						<h5 class="text-center">Samanta Doe</h5>
-						<p>Joined February 06, 2017</p>
-					</div>
-					<!-- Dashboard Links -->
-					<div class="widget user-dashboard-menu">
-						<ul>
-							<li>
-								<a href="dashboard-my-ads.html"><i class="fa fa-user"></i> My Ads</a></li>
-							<li>
-								<a href="dashboard-favourite-ads.html"><i class="fa fa-bookmark-o"></i> Favourite Ads <span>5</span></a>
-							</li>
-							<li>
-								<a href="dashboard-archived-ads.html"><i class="fa fa-file-archive-o"></i>Archeved Ads <span>12</span></a>
-							</li>
-							<li>
-								<a href="dashboard-pending-ads.html"><i class="fa fa-bolt"></i> Pending Approval<span>23</span></a>
-							</li>
-							<li>
-								<a href="logout.html"><i class="fa fa-cog"></i> Logout</a>
-							</li>
-							<li>
-								<a href="delete-account.html"><i class="fa fa-power-off"></i>Delete Account</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
-				<!-- Edit Personal Info -->
-				<div class="sidebar">
-					<div class="widget price text-center">
-						<h4>Price</h4>
-						<p>$230</p>
-					</div>
-					<!-- User Profile widget -->
-					<div class="widget user">
-						<img class="rounded-circle" src="images/user/user-thumb.jpg" alt="">
-						<h4><a href="">Jonathon Andrew</a></h4>
-						<p class="member-time">Member Since Jun 27, 2017</p>
-						<a href="">See all ads</a>
-						<ul class="list-inline mt-20">
-							<li class="list-inline-item"><a href="" class="btn btn-contact">Contact</a></li>
-							<li class="list-inline-item"><a href="" class="btn btn-offer">Make an offer</a></li>
-						</ul>
-					</div>
-					<!-- Map Widget -->
-					<div class="widget map">
-						<div class="map">
-							<div id="map"></div>
-						</div>
-					</div>
-					<!-- Rate Widget -->
-					<div class="widget rate">
-						<!-- Heading -->
-						<h5 class="widget-header text-center">What would you rate
-						<br>
-						this product</h5>
-						<!-- Rate -->
-						<div class="starrr"></div>
-					</div>
-		
-				
-				</div>
-			</div>
-		</div>
-	</div>
+                        <div class="info">
+							
+                          <span>SBD: Bk{{item.id}}AP</span>
+                          <p>{{item.candidate.name}}</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="wrap">
+                          <a
+                            class="link"
+                            href="/phieu-binh-chon/dc606144859c2468ffcc023c26a42ea779e57eddf84283424abda5e37cc7e968"
+                            >78e16e32-9dd0-4c34...</a
+                          >
+                        </div>
+                      </td>
+                      <td>
+                        <div class="wrap">
+                          <a
+                            class="link"
+                            href="/nguoi-binh-chon/ED20E71B050A68D5F4D248E43E7E7EED9245DD70"
+                            > {{item.acc.name}} </a
+                          >
+                        </div>
+                      </td>
+                      <td><div class="wrap"> {{item.created_time}} </div></td>
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- Map Widget -->
+          <div class="widget map">
+            <div class="map">
+              <div id="map"></div>
+            </div>
+          </div>
+          <!-- Rate Widget -->
+          <div class="widget rate">
+            <!-- Heading -->
+            <h5 class="widget-header text-center">
+              What would you rate
+              <br />
+              this product
+            </h5>
+            <!-- Rate -->
+            <div class="starrr"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
