@@ -1,0 +1,274 @@
+<section class="user-profile section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 offset-md-1 col-lg-4 offset-lg-0">
+          <div class="sidebar">
+            <!-- User Widget -->
+            <div class="widget user-dashboard-profile">
+              <!-- User Image -->
+              <div class="profile-thumb">
+                <img
+                  
+                  alt=""
+                  class="rounded-circle"
+                />
+              </div>
+              <!-- User Name -->
+              <h5 class=
+              "text-center"></h5>
+              <p></p>
+            </div>
+            <!-- Dashboard Links -->
+            <div class="widget user-dashboard-menu">
+              <ul>
+                <li>
+                  <a href="dashboard-my-ads.html"
+                    ><i class="fa fa-user"></i> My Ads</a
+                  >
+                </li>
+                <li>
+                  <a href="dashboard-favourite-ads.html"
+                    ><i class="fa fa-bookmark-o"></i> Favourite Ads
+                    <span>5</span></a
+                  >
+                </li>
+                <li>
+                  <a href="dashboard-archived-ads.html"
+                    ><i class="fa fa-file-archive-o"></i>Archeved Ads
+                    <span>12</span></a
+                  >
+                </li>
+                <li>
+                  <a href="dashboard-pending-ads.html"
+                    ><i class="fa fa-bolt"></i> Pending Approval<span>23</span></a
+                  >
+                </li>
+                <li>
+                  <a href="delete-account.html"
+                    ><i class="fa fa-power-off"></i>Rechager</a
+                  >
+                </li>
+                <li>
+                  <a href="logout.html"><i class="fa fa-cog"></i> Logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
+          <!-- Edit Personal Info -->
+          <div class="sidebar">
+              <div class="widget price text-center">
+                <h4>Account balance</h4>
+                <p></p>
+              </div>
+              <!-- User Profile widget -->
+              <div class="row">
+                <div ng-show="panelStatus === 1" class="p-5">
+                  <div class="section-body-middle" style="min-height: 594px">
+                    <form
+                      id="steponeForm"
+                      class="ng-valid ng-valid-maxlength ng-dirty ng-valid-parse"
+                    >
+                      <div class="section-body-middle-form-p1 no-border-top">
+                        <div class="form-group">
+                          <label for="" class="title">
+                            <img src="/Resources/images/ic_dark/ic-43.png" alt="" /> Chọn
+                            mệnh giá
+                          </label>
+                          <div class="row">
+                            <ul class="form-group-radio grid4" tabindex="2">
+                              <li>
+                                <div class="radio radio-btn">
+                                  <label class="touch has-ripple checked">
+                                    <input
+                                      type="radio"
+                                      ng-model="wait_money"
+                                      name="wait_money"
+                                      (click)="add_money(10000)"
+                                      value="10000"
+                                      class="ng-untouched money ng-valid ng-dirty ng-valid-parse" />10.000
+                                    <span class="checkbox-custom"></span>
+                                    <span
+                                      class="ripple ripple-animate"
+                                      style="
+                                        height: 126.5px;
+                                        width: 126.5px;
+                                        animation-duration: 0.4s;
+                                        animation-timing-function: linear;
+                                        background: rgb(255, 255, 255);
+                                        opacity: 0.1;
+                                        top: -54.625px;
+                                        left: 11.5px;
+                                      "
+                                    ></span
+                                  ></label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="radio radio-btn">
+                                  <label class="touch has-ripple">
+                                    <input
+                                      type="radio"
+                                      ng-model="wait_money"
+                                      name="wait_money"
+                                      (click)="add_money(20000)"
+                                      value="20000"
+                                      class="ng-untouched money ng-valid ng-dirty" />20.000
+                                    <span class="checkbox-custom"></span>
+                                    <span
+                                      class="ripple ripple-animate"
+                                      style="
+                                        height: 126.5px;
+                                        width: 126.5px;
+                                        animation-duration: 0.4s;
+                                        animation-timing-function: linear;
+                                        background: rgb(255, 255, 255);
+                                        opacity: 0.1;
+                                        top: -21.625px;
+                                        left: -10.5px;
+                                      "
+                                    ></span
+                                  ></label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="radio radio-btn">
+                                  <label class="touch">
+                                    <input
+                                      type="radio"
+                                      ng-model="wait_money"
+                                      name="wait_money"
+                                      (click)="add_money(30000)"
+                                      value="30000"
+                                      class="ng-pristine ng-untouched money ng-valid"
+                                    />30.000
+                                    <span class="checkbox-custom"></span>
+                                  </label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="radio radio-btn">
+                                  <label class="touch">
+                                    <input
+                                      type="radio"
+                                      ng-model="wait_money"
+                                      name="wait_money"
+                                      (click)="add_money(50000)"
+                                      value="50000"
+                                      class="ng-pristine ng-untouched money ng-valid"
+                                    />50.000
+                                    <span class="checkbox-custom"></span>
+                                  </label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="radio radio-btn">
+                                  <label class="touch">
+                                    <input
+                                      type="radio"
+                                      ng-model="wait_money"
+                                      name="wait_money"
+                                      (click)="add_money(100000)"
+                                      checked=""
+                                      value="100000"
+                                      class="ng-pristine ng-untouched money ng-valid"
+                                    />100.000
+                                    <span class="checkbox-custom"></span>
+                                  </label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="radio radio-btn">
+                                  <label class="touch">
+                                    <input
+                                      type="radio"
+                                      ng-model="wait_money"
+                                      name="wait_money"
+                                      (click)="add_money(200000)"
+                                      value="200000"
+                                      class="ng-pristine ng-untouched money ng-valid"
+                                    />200.000
+                                    <span class="checkbox-custom"></span>
+                                  </label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="radio radio-btn">
+                                  <label class="touch">
+                                    <input
+                                      type="radio"
+                                      ng-model="wait_money"
+                                      name="wait_money"
+                                      (click)="add_money(300000)"
+                                      value="300000"
+                                      class="ng-pristine ng-untouched money ng-valid"
+                                    />300.000
+                                    <span class="checkbox-custom"></span>
+                                  </label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="radio radio-btn">
+                                  <label class="touch">
+                                    <input
+                                      type="radio"
+                                      ng-model="wait_money"
+                                      name="wait_money"
+                                      (click)="add_money(500000)"
+                                      value="500000"
+                                      class="ng-pristine ng-untouched money ng-valid"
+                                    />500.000
+                                    <span class="checkbox-custom"></span>
+                                  </label>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="section-body-middle-form-p2">
+                        <div class="row">
+                          <div class="col-md-7">
+                            <div class="checkbox" tabindex="4">
+                              <label>
+                                <input
+                                  type="checkbox"
+                                  value=""
+                                  ng-model="isReadTerm"
+                                  checked="checked"
+                                  class="ng-pristine ng-untouched money ng-valid"
+                                />
+                                <span
+                                  class="checkbox-custom visible cbutton cbutton--effect-boris"
+                                ></span>
+                              </label>
+                              <a
+                                class="checkbox-agree"
+                                href="/tro-giup/Quy-dinh-chung-88.html"
+                                target="_blank"
+                                ><span>Tôi đã đọc và đồng ý với chính sách</span></a
+                              >
+                            </div>
+                          </div>
+                          <div tabindex="5" class="col-md-5 text-right">
+                            <button
+                              (click)="submit_money()"
+                              class="button btn-custom btn-blue"
+                              fdprocessedid="pa7g26"
+                            >
+                              Nạp tiền ngay
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+  

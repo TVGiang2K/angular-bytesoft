@@ -1,0 +1,87 @@
+@media (max-width: 1600px) {
+    .form-group label.title {
+      font-size: 12px;
+      margin-bottom: 1em;
+    }
+  }
+  .form-group label.title img {
+    margin-right: 7px;
+    height: 40px;
+    padding-bottom: 5px;
+  }
+  .form-group-radio .radio-btn {
+    text-align: center;
+    width: 100%;
+  }
+  .form-group-radio .radio-btn label {
+    color: #434a54;
+    font-weight: 500;
+    padding: 0;
+    height: 3.5em;
+    border: 1px solid #dcdcdf;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    line-height: 3.5em;
+    display: block;
+    position: relative;
+    margin-bottom: 0;
+    -webkit-transition: all 0.15s ease;
+    -o-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+  }
+  .form-group-radio input[type="radio"] {
+    visibility: hidden;
+    position: absolute;
+    top: 0.2em;
+    right: 0.2em;
+    margin: 0;
+  }
+  .form-group-radio input[type="radio"]:checked ~ span:not(.ripple) {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    display: block;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+
+  .ripple .ripple-animate {
+    height: 126.5px;
+    width: 126.5px;
+    animation-duration: 0.4s;
+    animation-timing-function: linear;
+    background: rgb(255, 255, 255);
+    opacity: 0.1;
+    top: -54.625px;
+    left: 11.5px;
+  }
+
+  .section-body-middle {
+    font-size: 14px;
+    background: white;
+    margin-bottom: 80px;
+    min-height: 46.3em;
+  }
+  .grid4 > li {
+    width: 25%;
+  }
+
+  .form-group-radio > li {
+    padding: 15px;
+    font-size: 20px;
+  }
+
+  .grid4 > li {
+    display: inline-block;
+    float: left;
+  }
+
+  .checked {
+    border-color: #2188c9 !important;
+    color: #2188c9 !important;
+  }
+
+  .touch.has-ripple{
+    cursor: pointer !important;
+  }

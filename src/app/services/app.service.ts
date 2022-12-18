@@ -72,4 +72,13 @@ export class AppService {
   action_vote_candidate(idCandidate:number,quantityVote:number){
     return this.http.get<any>(`${api}/account/vote/${idCandidate}/${quantityVote}`,{withCredentials:true});
   }
+
+  add_money(money:any,idUser:any){
+    let data = {
+      money,
+      idUser
+    }
+    console.log(data);
+    return this.http.post<any>(`${api}/account/recharge`,data,{withCredentials:true});
+  }
 }

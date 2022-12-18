@@ -12,8 +12,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AboutComponent } from './components/about/about.component';
-import { ComponentsComponent } from './contest_details/components/components.component';
-import { ContestDetailsComponent } from './components/contest-details/contest-details.component';
+import { CreaditComponent } from './components/creadit/creadit.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +24,7 @@ import { ContestDetailsComponent } from './components/contest-details/contest-de
     LoginComponent,
     UserProfileComponent,
     AboutComponent,
-    ComponentsComponent,
-    ContestDetailsComponent
+    CreaditComponent,
   ],
   imports: [
     BrowserModule,
