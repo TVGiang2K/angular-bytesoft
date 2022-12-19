@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AboutComponent } from './components/about/about.component';
 import { CreaditComponent } from './components/creadit/creadit.component';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { CreaditComponent } from './components/creadit/creadit.component';
     UserProfileComponent,
     AboutComponent,
     CreaditComponent,
+    ChangePasswordComponent,
   ],
   imports: [
     BrowserModule,
