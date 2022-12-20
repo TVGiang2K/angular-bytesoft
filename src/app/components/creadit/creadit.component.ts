@@ -15,9 +15,17 @@ export class CreaditComponent implements OnInit {
   }
 
 
-  add_money(money:number){
+  add_money(money:number ,e: any){
     this.qttmoney = money;
-    console.log(this.qttmoney)
+    // console.log(e)
+    let btn = document.querySelectorAll(`.money`);
+    let btn_event = document.querySelector(`#color${e}`)?.parentElement;
+    console.log(btn_event?.getAttribute('class'))  
+    if(btn_event?.getAttribute('class') == 'checked'){
+    }
+    btn_event?.classList.add('checked')
+
+   
   }
   submit_money(){
     this.app.getProfile().subscribe((res:any) => {
