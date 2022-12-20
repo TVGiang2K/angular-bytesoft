@@ -19,7 +19,6 @@ export class AppComponent implements OnInit{
 
   getdata() {
     this.app.getProfile().subscribe((res:any)=>{
-      console.log('dasdas');
       this.account = res.user
     })
   }

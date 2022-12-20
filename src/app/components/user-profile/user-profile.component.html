@@ -52,7 +52,25 @@
               </li>
             </ul>
           </div>
+          <div class="widget user-dashboard-menu">
+            <h3>History recharge</h3>
+            <table class="table">
+              <thead class="thead">
+                <tr>
+                  <th>STT</th>
+                  <th>Số tiền được nạp</th>
+                  <th>Thời gian nạp</th>
+                </tr>
+                <tr *ngFor="let item of history_recharge; index as i;">
+                  <td>{{i+1}}</td>
+                  <td>{{item.wait_money}}</td>
+                  <td>{{created_date}}</td>
+                </tr>
+              </thead>
+            </table>
+          </div>
         </div>
+
       </div>
       <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
         <!-- Edit Personal Info -->
@@ -112,23 +130,6 @@
                 </table>
               </div>
             </div>
-          </div>
-          <!-- Map Widget -->
-          <div class="widget map">
-            <div class="map">
-              <div id="map"></div>
-            </div>
-          </div>
-          <!-- Rate Widget -->
-          <div class="widget rate">
-            <!-- Heading -->
-            <h5 class="widget-header text-center">
-              What would you rate
-              <br />
-              this product
-            </h5>
-            <!-- Rate -->
-            <div class="starrr"></div>
           </div>
         </div>
       </div>

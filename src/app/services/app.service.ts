@@ -62,7 +62,7 @@ export class AppService {
   }
 
   get_register(data: any): any {
-    return this.http.post<any>(`${api}/register`, data);
+    return this.http.post<any>(`${api}/register`, data,{withCredentials:true});
   }
 
   historyVote(){
@@ -80,5 +80,9 @@ export class AppService {
     }
     console.log(data);
     return this.http.post<any>(`${api}/account/recharge`,data,{withCredentials:true});
+  }
+
+  get_recharge_history(){
+      return this.http.get<any>(`${api}/account/recharge-history`,{withCredentials:true})
   }
 }

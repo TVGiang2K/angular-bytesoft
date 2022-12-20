@@ -10,12 +10,16 @@ export class UserProfileComponent implements OnInit {
   info: any = {};
   date: any;
   history_Vote: any = [];
+  history_recharge: any = [];
   created_time:any;
+  
+  created_date:any;
   constructor(private app: AppService) { }
 
   ngOnInit(): void {
     this.profile()
     this.historyVote()
+    this.historyRecharge()
   }
 
   profile(){
@@ -34,5 +38,17 @@ export class UserProfileComponent implements OnInit {
       }
     })
   }
+  historyRecharge(){
+    this.app.get_recharge_history().subscribe((res:any) => {
+      console.log(res.data);
+      
+      this.history_recharge = res.data
+      for(let item of res.data){
+        this.created_date = new Date(item.created_date).toLocaleDateString('zh-Hans-CN') 
+      }
+    })
+  }
+
+
 
 }

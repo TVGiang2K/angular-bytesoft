@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-creadit',
   templateUrl: './creadit.component.html',
@@ -32,6 +32,10 @@ export class CreaditComponent implements OnInit {
       this.user = res.id
     })
     this.app.add_money(this.qttmoney,this.user).subscribe((res:any)=>{
+      Swal.fire({
+        title:  'Request sent to admin, pending',
+        icon: 'success'
+      })
       console.log(res);
     })
   }

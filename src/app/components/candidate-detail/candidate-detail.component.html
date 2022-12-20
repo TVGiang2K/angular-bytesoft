@@ -48,6 +48,17 @@
 						<li class="list-inline-item"><b> Total vote: {{candidate.quantityVote}}</b></li>
 					</ul>
 					<img [src]="'http://localhost:3000/img/avatars/' +  candidate.avatar" alt="article-02">
+					
+					<div class="alert alert-warning alert-dismissible fade show" role="alert" *ngIf="checkErrors">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						  <span aria-hidden="true">&times;</span>
+						</button>
+						<strong>{{checkErrors}}</strong> 
+					  </div>
+					  
+					  <script>
+						$(".alert").alert();
+					  </script>
 					<form action="" method="get" (submit)="vote(candidate.id)">
 						<div class="form-group">
 						  <label for=""></label>

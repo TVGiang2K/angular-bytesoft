@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AppService } from 'src/app/services/app.service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -43,15 +44,17 @@ export class RegisterComponent implements OnInit {
       return;
     }    
     this.formRegister.value.avatar = this.file.name;
-    console.log(this.formRegister.value);
-    this.app.get_register(this.formRegister.value).subscribe((res: any) => {
-      try {
+    this.app.get_register(this.formRegister.value).subscribe((res: any) => {      
+      if (res.action == true){
         let formData = new FormData();
         formData.set('file', this.file);
-        this.http.post("http://localhost:3000/upload", formData).subscribe((response)=> {})
-        location.assign('/login');
-      } catch (error) {
-        this.checkErrors = 'user'
+          this.http.post("http://localhost:3000/src/public/img/avatars", formData).subscribe((response)=> {})
+          location.assign('/login');
+      } else if (res.action == false){
+        Swal.fire({
+          title:  'Registration failed, Please try again',
+          icon: 'error'
+        })
       }
     })
   }

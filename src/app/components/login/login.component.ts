@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
 
   onLogin(){    
     this.app.checkLogin(this.formLogin.value).subscribe((res:any)=>{
+      console.log(res);
       if(res.account){
         console.log(res);
         localStorage.setItem('profile', JSON.stringify(res.account))
