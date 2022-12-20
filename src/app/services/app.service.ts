@@ -22,7 +22,7 @@ export class AppService {
     return this.http.get(`${api}/contest/api/list`);
   }
 
-  getContestById(id: number): any {
+  getContestById(id: number,): any {
     return this.http.get<any>(`${api}/contest/api/${id}`);
   }
 
