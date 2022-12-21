@@ -36,7 +36,7 @@ export class CreaditComponent implements OnInit {
         title:  'Request sent to admin, pending',
         icon: 'success'
       })
-      console.log(res);
+      // console.log(res);
     })
   }
 }

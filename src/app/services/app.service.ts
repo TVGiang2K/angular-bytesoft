@@ -85,4 +85,8 @@ export class AppService {
   get_recharge_history(){
       return this.http.get<any>(`${api}/account/recharge-history`,{withCredentials:true})
   }
+  changePass(data:any){
+    return this.http.post<any>(`${api}/account/api/change-password`,data,{withCredentials:true});
+  }
+
 }
