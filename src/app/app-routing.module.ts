@@ -13,7 +13,7 @@ import { ChangePasswordComponent } from './components/change-password/change-pas
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'about', component: AboutComponent},
-  { path: 'contest_details/:id', component: ContestDetailComponent},
+  { path: 'contest-details/:id', component: ContestDetailComponent},
   { path: 'candidate-detail/:id', component: CandidateDetailComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},

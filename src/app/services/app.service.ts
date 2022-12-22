@@ -3,7 +3,7 @@ import { Token } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 
-const api = 'http://localhost:3000';
+const api = 'https://api-vote-app.onrender.com';
 @Injectable({
   providedIn: 'root',
 })
@@ -62,7 +62,7 @@ export class AppService {
   }
 
   get_register(data: any): any {
-    return this.http.post<any>(`${api}/register`, data,{withCredentials:true});
+    return this.http.post<any>(`${api}/register`, data);
   }
 
   historyVote(){

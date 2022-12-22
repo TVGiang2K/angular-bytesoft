@@ -8,7 +8,7 @@
                         <form action="" method="post" [formGroup]="formLogin" (submit)="onLogin()">
                             <div class="form-group mb-30">
                                 <label for="email">Email</label>
-                                <input type="email" class="form-control" formControlName="email">
+                                <input type="email" class="form-control" formControlName="email" placeholder="Your email">
                                 <span *ngIf="f['email'].touched && f['email'].errors">
                                     <small class="help-block" *ngIf="f['email'].errors['required']">Emaill không được để trống</small>
                                     <small class="help-block" *ngIf="f['email'].errors['email']">Emaill không đúng định dạng</small>
@@ -17,7 +17,7 @@
                             <!-- Name -->
                             <div class="form-group mb-30">
                                 <label for="name">Password</label>
-                                <input type="password" class="form-control" formControlName="password">
+                                <input type="password" class="form-control" formControlName="password" placeholder="Your password">
                                 <span *ngIf="f['password'].touched && f['password'].errors">
                                     <small class="help-block" *ngIf="f['password'].errors['required']">password không được để trống</small>
                                 </span>

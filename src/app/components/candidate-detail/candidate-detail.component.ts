@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-// import { SwalPortalComponent } from '@sweetalert2/ngx-sweetalert2/lib/swal-portal.component';
 import { AppService } from 'src/app/services/app.service';
 import Swal from 'sweetalert2';
 
@@ -20,7 +19,6 @@ export class CandidateDetailComponent implements OnInit {
     this.activedRouter.paramMap.subscribe((query: any) => {
       this.id = query.get('id');
       this.app.getCandidateById(this.id).subscribe((res: any) => {
-        console.log(res.candidate_by_id);
         this.candidate = res.candidate_by_id;
       })
     });

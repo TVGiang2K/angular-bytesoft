@@ -24,21 +24,16 @@ export class RegisterComponent implements OnInit {
   getFile(event: any){
     this.file = event.target.files[0];
   }
-
   get fo(){    
     return this.formRegister.controls;
     
   }
-
   constructor(private app: AppService,
       private http: HttpClient
-    ) { }
-
+    ) {}
   ngOnInit(): void {
   }
   
-
-
   on_register() {
     if(this.formRegister.invalid){
       return;
@@ -46,9 +41,6 @@ export class RegisterComponent implements OnInit {
     this.formRegister.value.avatar = this.file.name;
     this.app.get_register(this.formRegister.value).subscribe((res: any) => {      
       if (res.action == true){
-        let formData = new FormData();
-        formData.set('file', this.file);
-          this.http.post("http://localhost:3000/src/public/img/avatars", formData).subscribe((response)=> {})
           location.assign('/login');
       } else if (res.action == false){
         Swal.fire({

@@ -28,11 +28,4 @@ export class ContestDetailComponent implements OnInit {
         this.candidates_by_contest = res.candidates_by_contest;
     });
   }
-
-  vote(id:number){
-    let acc = this.app.getAccountInfor()
-
-    console.log(acc)
-    console.log(id)
-  }
 }

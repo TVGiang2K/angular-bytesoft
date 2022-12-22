@@ -59,11 +59,14 @@
                 <tr>
                   <th>STT</th>
                   <th>Số tiền được nạp</th>
+                  <th>Status</th>
                   <th>Thời gian nạp</th>
                 </tr>
                 <tr *ngFor="let item of history_recharge; index as i;">
                   <td>{{i+1}}</td>
-                  <td>{{item.wait_money | currency:"VND"}}</td>
+                  <td>{{item.wait_money}}</td>
+                  <td *ngIf="item.status == 0" class="text-warning">waiting</td>
+                  <td *ngIf="item.status == 1" class="text-success">success</td>
                   <td>{{created_date}}</td>
                 </tr>
               </thead>
