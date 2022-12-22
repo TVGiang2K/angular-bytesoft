@@ -11,7 +11,6 @@ import { LoginComponent } from './components/login/login.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { AboutComponent } from './components/about/about.component';
 import { CreaditComponent } from './components/creadit/creadit.component';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 
@@ -24,7 +23,6 @@ import { ChangePasswordComponent } from './components/change-password/change-pas
     RegisterComponent,
     LoginComponent,
     UserProfileComponent,
-    AboutComponent,
     CreaditComponent,
     ChangePasswordComponent,
   ],
