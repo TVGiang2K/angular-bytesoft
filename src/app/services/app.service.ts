@@ -1,7 +1,5 @@
-import { HttpClient, HttpStatusCode } from '@angular/common/http';
-import { Token } from '@angular/compiler';
+import { HttpClient} from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs/operators';
 
 const api = 'https://api-vote-app.onrender.com';
 @Injectable({

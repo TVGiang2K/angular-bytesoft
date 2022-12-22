@@ -8,7 +8,7 @@
             <!-- User Image -->
             <div class="profile-thumb">
               <img
-                [src]="'http://localhost:3000/img/avatars/' + info.avatar"
+                [src]="'https://api-vote-app.onrender.com/' + info.avatar"
                 alt=""
                 class="rounded-circle"
               />
@@ -101,7 +101,7 @@
                     <tr *ngFor="let item of history_Vote">
                       <td style="display: flex; align-items: center">
                         <div >
-							<img class="avatar" [src]="'http://localhost:3000/img/avatars/' + item.candidate.avatar" alt="">
+							<img class="avatar" [src]="'https://api-vote-app.onrender.com/' + item.candidate.avatar" alt="">
 						</div>
                         <div class="info">
 							
